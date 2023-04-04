@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SolveblemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('solveblem/submissions', [SolveblemController::class, 'index']);
+
+Route::get('solveblem/profiles/user/submission-history', [SolveblemController::class, 'create']);
+
+Route::get('solveblem/profiles/user', [SolveblemController::class, 'user']);
+
+Route::get('solveblem/user/contest', [SolveblemController::class, 'contest']);
